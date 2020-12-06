@@ -1,3 +1,9 @@
+<!-- {ignore} -->
+## ⚠️ Warning:
+This is a source file for the docs site and may not be up to date with the latest version.
+Prefer to read it on [The official docs site](https://flame-engine.org/docs)
+<!-- {/ignore} -->
+
 # Looping Background Music
 
 With the `Bgm` class you can manage looping of background music tracks with regards to application (or game) lifecycle state changes.

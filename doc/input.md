@@ -1,3 +1,9 @@
+<!-- {ignore} -->
+## ⚠️ Warning:
+This is a source file for the docs site and may not be up to date with the latest version.
+Prefer to read it on [The official docs site](https://flame-engine.org/docs)
+<!-- {/ignore} -->
+
 # Input
 
 ## Gestures
@@ -108,9 +114,9 @@ You can also check a more complete example [here](/doc/examples/gestures).
 Flame also offers a simple helper to make it easier to handle tap events on `PositionComponent`. By adding the `HasTapableComponents` mixin to your game, and using the mixin `Tapable` on your components can override the following methods, enabling easy to use tap events on yours components.
 
 ```dart
-  void onTapCancel() {}
-  void onTapDown(TapDownDetails details) {}
-  void onTapUp(TapUpDetails details) {}
+void onTapCancel() {}
+void onTapDown(TapDownDetails details) {}
+void onTapUp(TapUpDetails details) {}
 ```
 
 Minimal component example:
@@ -267,13 +273,13 @@ class Player extends Component implements JoystickListener {
 
 ```dart
 
-  JoystickDirectionalEvent({
+JoystickDirectionalEvent({
     JoystickMoveDirectional directional,
     double intensity = 0.0,
     double radAngle = 0.0,
-  });
+});
 
-  enum JoystickMoveDirectional {
+enum JoystickMoveDirectional {
     MOVE_UP,
     MOVE_UP_LEFT,
     MOVE_UP_RIGHT,
@@ -283,7 +289,7 @@ class Player extends Component implements JoystickListener {
     MOVE_DOWN_LEFT,
     MOVE_LEFT,
     IDLE
-  }
+}
 
 ```
 
@@ -291,14 +297,14 @@ class Player extends Component implements JoystickListener {
 
 ```dart
 
-  JoystickActionEvent({
-      int id,
-      double intensity = 0.0,
-      double radAngle = 0.0,
-      ActionEvent event,
-   });
+JoystickActionEvent({
+  int id,
+  double intensity = 0.0,
+  double radAngle = 0.0,
+  ActionEvent event,
+});
 
-  enum ActionEvent { DOWN, UP, MOVE, CANCEL }
+enum ActionEvent { DOWN, UP, MOVE, CANCEL }
 
 ```
 

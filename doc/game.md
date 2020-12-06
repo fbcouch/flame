@@ -1,3 +1,9 @@
+<!-- {ignore} -->
+## ⚠️ Warning:
+This is a source file for the docs site and may not be up to date with the latest version.
+Prefer to read it on [The official docs site](https://flame-engine.org/docs)
+<!-- {/ignore} -->
+
 # Game Loop
 
 The Game Loop module is a simple abstraction over the game loop concept. Basically most games are built upon two methods:

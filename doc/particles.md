@@ -1,3 +1,9 @@
+<!-- {ignore} -->
+## ⚠️ Warning:
+This is a source file for the docs site and may not be up to date with the latest version.
+Prefer to read it on [The official docs site](https://flame-engine.org/docs)
+<!-- {/ignore} -->
+
 # Particles
 
 Flame offers a basic, yet robust and extendable particle system. The core concept of this system is the `Particle` class, which is very similar in its behavior to the `ParticleComponent`.
@@ -370,8 +376,8 @@ class GlitchParticle extends Particle with SingleChildParticle {
     Particle child;
 
     GlitchParticle({
-      @required this.child,
-      double lifespan,
+        @required this.child,
+        double lifespan,
     }) : super(lifespan: lifespan);
 
     @override

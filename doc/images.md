@@ -1,3 +1,9 @@
+<!-- {ignore} -->
+## ⚠️ Warning:
+This is a source file for the docs site and may not be up to date with the latest version.
+Prefer to read it on [The official docs site](https://flame-engine.org/docs)
+<!-- {/ignore} -->
+
 # Images
 
 If you are using the Component module and doing something simple, you probably won't need to use these classes; use `SpriteComponent` or `AnimationComponent` instead.
@@ -30,9 +36,9 @@ To synchronously retrieve a previously cached image, the `fromCache` method can 
 It can be manually used by instantiating it:
 
 ```dart
-    import 'package:flame/images.dart';
-    final imagesLoader = Images();
-    Image image = await imagesLoader.load('asd');
+import 'package:flame/images.dart';
+final imagesLoader = Images();
+Image image = await imagesLoader.load('asd');
 ```
 
 But Flame also offers two ways of using this class without instantiating it yourself.
@@ -44,12 +50,12 @@ There is a singleton, provided by the `Flame` class, that can be used as a globa
 Example:
 
 ```dart
-    import 'package:flame/flame.dart';
+import 'package:flame/flame.dart';
 
-    // inside an async context
-    Image image = await Flame.images.load('player.png');
+// inside an async context
+Image image = await Flame.images.load('player.png');
 
-    final playerSprite = Sprite(image);
+final playerSprite = Sprite(image);
 ```
 
 ### Game.images
@@ -101,15 +107,15 @@ You can create a `Sprite` by providing it an `Image` and coordinates that define
 For example, this will create a sprite representing the whole image of the file passed, automatically triggering its loading:
 
 ```dart
-    final image = await loadImage();
-    Sprite player = Sprite(image);
+final image = await loadImage();
+Sprite player = Sprite(image);
 ```
 
 You could also specify the coordinates in the original image where the sprite is located. This allows you to use sprite sheets and reduce the number of images in memory, for example:
 
 ```dart
-    final image = await loadImage();
-    Sprite playerFrame = Sprite(image, x: 32.0, width: 16.0);
+final image = await loadImage();
+Sprite playerFrame = Sprite(image, x: 32.0, width: 16.0);
 ```
 
 The default values are `0.0` for `x` and `y` and `null` for `width` and `height` (meaning it will use the full width/height of the source image).
@@ -117,11 +123,11 @@ The default values are `0.0` for `x` and `y` and `null` for `width` and `height`
 The `Sprite` class has a render method, that allows you to render the sprite onto a `Canvas`:
 
 ```dart
-    final image = await loadImage();
-    Sprite block = Sprite('block.png');
+final image = await loadImage();
+Sprite block = Sprite('block.png');
 
-    // in your render method
-    block.render(canvas, 16.0, 16.0); //canvas, width, height
+// in your render method
+block.render(canvas, 16.0, 16.0); //canvas, width, height
 ```
 
 You must pass the size to the render method, and the image will be resized accordingly.
@@ -153,13 +159,13 @@ Svg support is provided by the `flame_svg` external package, be sure to put it o
 To use it just import the `Svg` class from `'package:flame_svg/flame_svg.dart'`, and use the following snippet to render it on the canvas:
 
 ```dart
-    Svg svgInstance = Svg('android.svg');
+Svg svgInstance = Svg('android.svg');
 
-    final position = Position(100, 100);
-    final width = 300;
-    final height = 300;
+final position = Position(100, 100);
+final width = 300;
+final height = 300;
 
-    svgInstance.renderPosition(canvas, position, width, height);
+svgInstance.renderPosition(canvas, position, width, height);
 ```
 
 ## Animation
@@ -169,7 +175,7 @@ The Animation class helps you create a cyclic animation of sprites.
 You can create it by passing a list of equally sized sprites and the stepTime (that is, how many seconds it takes to move to the next frame):
 
 ```dart
-  Animation a = Animation.spriteList(sprites, stepTime: 0.02);
+Animation a = Animation.spriteList(sprites, stepTime: 0.02);
 ```
 
 After the animation is created, you need to call its `update` method and render the current frame's sprite on your game instance, for example:
@@ -195,8 +201,8 @@ class MyGame extends Game {
 A better alternative to generate a list of sprites is to use the `sequenced` constructor:
 
 ```dart
-  const amountOfFrames = 8;
-  SpriteAnimation a = SpriteAnimation.sequenced(imageInstance, amountOfFrames, textureWidth: 16.0);
+const amountOfFrames = 8;
+SpriteAnimation a = SpriteAnimation.sequenced(imageInstance, amountOfFrames, textureWidth: 16.0);
 ```
 
 In which you pass the file name, the number of frames and the sprite sheet is automatically split for you according to the 4 optional parameters:
@@ -214,9 +220,9 @@ This constructor makes creating an Animation very easy using sprite sheets.
 If you use Aseprite for your animations, Flame does provide some support for Aseprite animation's JSON data. To use this feature you will need to export the Sprite Sheet's JSON data, and use something like the following snippet:
 
 ```dart
-  final image = await images.load('chopper.png');
-  final jsonData = await assets.readJson('chopper.json');
-  final animation = SpriteAnimation.fromAsepriteData(image, jsonData);
+final image = await images.load('chopper.png');
+final jsonData = await assets.readJson('chopper.json');
+final animation = SpriteAnimation.fromAsepriteData(image, jsonData);
 ```
 
 _Note: trimmed sprite sheets are not supported by flame, so if you export your sprite sheet this way, it will have the trimmed size, not the sprite original size._

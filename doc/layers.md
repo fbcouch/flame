@@ -1,3 +1,9 @@
+<!-- {ignore} -->
+## ⚠️ Warning:
+This is a source file for the docs site and may not be up to date with the latest version.
+Prefer to read it on [The official docs site](https://flame-engine.org/docs)
+<!-- {/ignore} -->
+
 # Layers
 
 Layers are an useful feature that lets you group renderization by context, as well as allow you yo pre-render things. That enables, for example, the renderization in memory of parts of your game that don't change much, like a background, and by doing that, freeing resources for more dynamic content that needs to be rendered every loop cycle.
@@ -85,6 +91,8 @@ class BackgroundLayer extends PreRenderedLayer {
 
   @override
   void drawLayer() { /* ommited */ }
+
+  // ...
 ```
 
 Custom processors can be creted by extending the `LayerProcessor` class.

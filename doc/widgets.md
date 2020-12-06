@@ -1,3 +1,9 @@
+<!-- {ignore} -->
+## ⚠️ Warning:
+This is a source file for the docs site and may not be up to date with the latest version.
+Prefer to read it on [The official docs site](https://flame-engine.org/docs)
+<!-- {/ignore} -->
+
 # Widgets
 
 One cool feature when developing games with Flutter is the ability to use Flutter's extensive toolset for building UIs, Flame tries to expand that introducing widgets which are specially made with games in mind.
@@ -22,10 +28,10 @@ Here you can find an example of its usage:
 import 'package:flame/widgets/nine_tile_box.dart';
 
 NineTileBox(
-        image: image, // dart:ui image instance
-        tileSize: 16, // The width/height of the tile on your grid image
-        destTileSize: 50, // The dimensions to be used when drawing the tile on the canvas
-        child: SomeWidget(), // Any Flutter widget
+    image: image, // dart:ui image instance
+    tileSize: 16, // The width/height of the tile on your grid image
+    destTileSize: 50, // The dimensions to be used when drawing the tile on the canvas
+    child: SomeWidget(), // Any Flutter widget
 )
 ```
 
@@ -39,12 +45,12 @@ How to use it:
 
 ```dart
 SpriteButton(
-          onPressed: () {
-            print('Pressed');
-          },
-          label: const Text('Sprite Button', style: const TextStyle(color: const Color(0xFF5D275D))),
-          sprite: _spriteButton,
-          pressedSprite: _pressedSpriteButton,
+    onPressed: () {
+      print('Pressed');
+    },
+    label: const Text('Sprite Button', style: const TextStyle(color: const Color(0xFF5D275D))),
+    sprite: _spriteButton,
+    pressedSprite: _pressedSpriteButton,
 )
 ```
 
@@ -56,8 +62,8 @@ How to use it:
 
 ```dart
 SpriteWidget(
-        sprite: shieldSprite,
-        center: true,
+    sprite: shieldSprite,
+    center: true,
 ),
 
 ```
@@ -70,8 +76,8 @@ How to use it:
 
 ```dart
 AnimationWidget(
-        animation: _animation,
-        playing: true,
-        center: true,
+    animation: _animation,
+    playing: true,
+    center: true,
 ),
 ```
